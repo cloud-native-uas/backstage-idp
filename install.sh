@@ -8,8 +8,18 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 nvm install 18 \
-&& nvm use 18 \
-&& sudo npm install yarn bash-language-server -g \
+&& sudo npm install yarn -g \
+&& sudo npm install bash-language-server -g \
 && cd mcce-idp \
-&& yarn install --frozen-lockfile \
-&& yarn tsc
+&& yarn tsc \
+&& yarn install --frozen-lockfile
+
+IP_ADDRESS="$(curl ifconfig.me)"
+cat << EOF
+To use this backstage instance:
+
+nvm use 18
+export IP_ADDRESS=${IP_ADDRESS}
+cd mcce-idp
+yarn run dev
+EOF

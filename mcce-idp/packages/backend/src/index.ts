@@ -7,6 +7,16 @@
  */
 
 import { createBackend } from '@backstage/backend-defaults';
+import techdocs from './plugins/techdocs';
+
+// .... main should already be present.
+async function main() {
+  // ... other backend plugin envs
+  const techdocsEnv = useHotMemoize(module, () => createEnv('techdocs'));
+
+  // ... other backend plugin routes
+  apiRouter.use('/techdocs', await techdocs(techdocsEnv));
+}
 
 const backend = createBackend();
 
@@ -38,4 +48,5 @@ backend.add(import('@backstage/plugin-search-backend/alpha'));
 backend.add(import('@backstage/plugin-search-backend-module-catalog/alpha'));
 backend.add(import('@backstage/plugin-search-backend-module-techdocs/alpha'));
 
+backend.add(import('@backstage/plugin-techdocs-backend/alpha'));
 backend.start();

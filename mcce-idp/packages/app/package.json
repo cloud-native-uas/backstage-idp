@@ -32,6 +32,7 @@
     "@backstage/plugin-scaffolder": "^1.21.0",
     "@backstage/plugin-search": "^1.4.12",
     "@backstage/plugin-search-react": "^1.7.12",
+    "@backstage/plugin-tech-radar": "^0.7.4",
     "@backstage/plugin-techdocs": "^1.10.6",
     "@backstage/plugin-techdocs-module-addons-contrib": "^1.1.11",
     "@backstage/plugin-techdocs-react": "^1.2.5",
@@ -49,10 +50,10 @@
   "devDependencies": {
     "@backstage/test-utils": "^1.5.6",
     "@playwright/test": "^1.32.3",
+    "@testing-library/dom": "^9.0.0",
     "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.0.0",
-    "@testing-library/dom": "^9.0.0",
     "@types/react-dom": "*",
     "cross-env": "^7.0.0"
   },

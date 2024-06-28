@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+sudo apt update \
+&& sudo apt -y install nvm \
+&& sudo nvm install 18 \
+&& sudo nvm use 18 \
+&& cd mcce-idp \
+&& yarn install --frozen-lockfile \
+&& yarn tsc 
+
